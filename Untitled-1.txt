@@ -1,0 +1,95 @@
+﻿bem.info -> Convenciones
+
+Clase 5 ->>
+Javascript: Promises, Callbacks, HTTP Request (Verbos HTTP)
+NPM: Descargar bootstrap local con npm
+https://www.w3schools.com/js/js_json_http.asp
+
+Clase 6: Crear una clase
+
+Clase 6 ->>
+-----------Scopes locales y globales-----------
+
+(function() {
+    var elemento = document.getElementById("elemento);
+})();
+
+var scopeGlobal = true;
+scopeLocal // no existe
+
+----------------SASS----------------
+Super Awesome StyleSheet
+npm run compilar-SASS (Dentro de scripts -> compilar-sass)
+
+--------------CLASES--------------
+
+import {nombreClase} from './Perro'
+
+export class Beagle extends Perro {
+    constructor(nombre:string, public raza: string = 'Beagle'){
+        super (nombre);
+    }
+}
+
+
+---------------INTERFACES---------------
+
+interface INombrable {
+    nombre: string;
+    saludar() : string;
+}
+class Persona implements INombrable {
+    nombre: string;
+    saludar() : string {
+        return 'Hola, soy ' + this.nombre;
+    }
+}
+
+function saludar(n: INombrable):void {
+    alert('Hola soy' + n.saludar);
+}
+
+interface IRaza {
+    raza: string;
+}
+
+let obj = {
+    raza: 'Beagle'
+};
+
+-------------------ANGULAR-------------------
+
+Vista: HTML, CSS y SASS.
+No es una librería.
+Ver: Angular 4 in 60 minutes.
+Herramientas a usar: node.js y npm
+WebPack: Empaquetador
+
+Documentación Angular: angular.io/guide/cheatsheet
+Módulo: Es una clase con decorator
+Descargar Angular CLI.
+
+Clase 8 ->>
+
+No cambiar nada del index.HTML. Solo modificar el app.component. Los componentes se ubican en este elemento con <nombrecomponent></nombrecomponent>
+Para modificar las rutas: app-routing.module.ts: const roues: Routes =[{path: 'ruta del componente', component: NombreComponent}, {Otra ruta}]
+Router-Outlet: Componente dinámico.
+No se coloca href, sino -> <a routerLink="/nombrecomponent">
+
+FormsModule: Va dentro del app.module.ts. (from @angular/forms)
+NgFor -> Sirve para iterar. Es una directiva.
+Ej: <ul *ngFor="let item of items">
+        <li>{{item}}<a href="#">X</a></li>
+    </ul>
+
+En todolist.component.ts -> Dentro de OnInit{
+    items : string[] = ['asd','asda','sdfs'];
+}
+
+Eventos ->
+<button (click)="onClick()">saasd</button> -> Cuando hago click llamo a la función "onClick".
+[(ngModel)] -> Two way binding (actualiza la vista a la vez que actualiza el model).
+
+Link GitHub Facu: github.com/fgcurso/angular-first-steps
+
+Pipe -> Es un filtro (Antes de mostrar a la vista, pasa por el pipe)

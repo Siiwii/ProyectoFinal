@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {NavbarComponent} from './navbar/navbar.component';
+import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
+import { ToppostsComponent } from './components/topposts/topposts.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  {path: '', component: HomenoregComponent},
+  {path: 'topposts', component: ToppostsComponent},
+  {path: '**', component: ErrorComponent}
+  
 ];
 
 @NgModule({
