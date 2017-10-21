@@ -9,6 +9,9 @@ import { ToppostsComponent } from './components/topposts/topposts.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HeadernoregComponent } from './components/header/headernoreg/headernoreg.component';
 import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
+import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
+import { PostsService } from './services/posts.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { HomenoregComponent } from './components/home/homenoreg/homenoreg.compon
     ErrorComponent,
     HeadernoregComponent,
     HomenoregComponent,
+    PostscontainerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    PostsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
