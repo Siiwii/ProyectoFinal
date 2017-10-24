@@ -4,13 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { ToppostsComponent } from './components/topposts/topposts.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { PostsComponent } from './components/home/posts/posts.component';
+import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
 
 const routes: Routes = [
   // {path: '', component: HomenoregComponent},
-  {path: 'topposts', component: ToppostsComponent},
   {path: '', component: HomeComponent},
+  {path: 'topposts', component: ToppostsComponent},
+  {path: 'posts', component: PostscontainerComponent},
+  {path: 'post/:id', component: PostsComponent},
   {path: '**', component: ErrorComponent}
-  
+
 ];
 
 @NgModule({

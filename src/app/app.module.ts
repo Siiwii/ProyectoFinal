@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { HomenoregComponent } from './components/home/homenoreg/homenoreg.compon
 import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
 import { PostsService } from './services/posts.service';
 import { HttpModule } from '@angular/http';
+import { PostsComponent } from './components/home/posts/posts.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,14 @@ import { HttpModule } from '@angular/http';
     HeadernoregComponent,
     HomenoregComponent,
     PostscontainerComponent,
+    PostsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     PostsService

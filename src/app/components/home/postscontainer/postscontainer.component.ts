@@ -8,15 +8,18 @@ import { PostsService } from '../../../services/posts.service';
 })
 export class PostscontainerComponent implements OnInit {
  
-titles: string[];
+posts : Array<any>;
 
   constructor(private postsService: PostsService) { }
 
+
+
   ngOnInit() {
-    this.postsService.getAll().subscribe(titles => {
-      this.titles = titles.json().map(value => value.title);
-    });
+    this.postsService.getAll().subscribe((posts) => {
+      this.posts = posts.json();
+    })
+    }
     
   }
 
-}
+  // Este componente listea todo el json

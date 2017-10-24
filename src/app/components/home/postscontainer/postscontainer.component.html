@@ -1,12 +1,10 @@
-<div class="card mb-3">
-    <img class="card-img-top" src="{{url}}" alt="Card image cap">
+<div class="card mb-3" *ngFor="let post of posts | slice:0:10">
     <div class="card-body">
-      <h4 class="card-title">{{title}}</h4>
+      <h4 class="card-title"><a [routerLink]="['/post', post.id]">{{post.title}}</a></h4>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <img [src]="post.url" style="width: 700px; height: 590px;"> <!-- Agregar class para modificar tamaño -->
+      <p class="card-text"><small class="text-muted"><a [routerLink]="['/post', post.id]">Last updated 3 mins ago</a></small></p>
     </div>
 </div>
 
 
-
-<!-- Colocar este componente dentro de posts.component e iterar ese componente en este   -->
