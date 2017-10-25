@@ -15,6 +15,9 @@ import { PostsService } from './services/posts.service';
 import { HttpModule } from '@angular/http';
 import { PostsComponent } from './components/home/posts/posts.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaginationComponent } from './components/home/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,15 @@ import { FooterComponent } from './components/footer/footer.component';
     PostscontainerComponent,
     PostsComponent,
     FooterComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    NgxPaginationModule,
+    NgbModule.forRoot()
   ],
   providers: [
     PostsService

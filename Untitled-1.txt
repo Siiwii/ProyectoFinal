@@ -93,3 +93,6 @@ Eventos ->
 Link GitHub Facu: github.com/fgcurso/angular-first-steps
 
 Pipe -> Es un filtro (Antes de mostrar a la vista, pasa por el pipe)
+
+
+Leer directivas y reactive forms: angular.io/guide
