@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PaginationComponent } from './components/home/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PostsComponent,
     FooterComponent,
     PaginationComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
