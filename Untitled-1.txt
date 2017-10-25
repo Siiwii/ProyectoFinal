@@ -96,3 +96,6 @@ Pipe -> Es un filtro (Antes de mostrar a la vista, pasa por el pipe)
 
 
 Leer directivas y reactive forms: angular.io/guide
+
+
+Cosas para hacer hoy: Acomodar el search box bien en el medio, modificar el rate system para que tenga voto positivo y negativo, modificar el dropdown de login y crear el top post service
