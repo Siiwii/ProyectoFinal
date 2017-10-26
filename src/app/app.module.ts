@@ -15,10 +15,11 @@ import { PostsService } from './services/posts.service';
 import { HttpModule } from '@angular/http';
 import { PostsComponent } from './components/home/posts/posts.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PaginationComponent } from './components/home/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './components/rating/rating.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { SortbyratePipe } from './pipes/sortbyrate.pipe';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { RatingComponent } from './components/rating/rating.component';
     PostscontainerComponent,
     PostsComponent,
     FooterComponent,
-    PaginationComponent,
     RatingComponent,
+    CapitalizePipe,
+    SortbyratePipe,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../../services/posts.service';
+import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-postscontainer',
   templateUrl: './postscontainer.component.html',
-  styleUrls: ['./postscontainer.component.scss']
+  styleUrls: ['./postscontainer.component.scss'],
 })
 export class PostscontainerComponent implements OnInit {
  
