@@ -20,6 +20,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './components/rating/rating.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { SortbyratePipe } from './pipes/sortbyrate.pipe';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SortbyratePipe } from './pipes/sortbyrate.pipe';
     RatingComponent,
     CapitalizePipe,
     SortbyratePipe,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

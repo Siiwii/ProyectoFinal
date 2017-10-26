@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../../services/posts.service';
 import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
+import { Post } from '../../../model/post';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-postscontainer',
@@ -9,17 +11,22 @@ import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 })
 export class PostscontainerComponent implements OnInit {
  
-posts : Array<any>;
+posts : Post[];
+errorMessage: string;
 
   constructor(private postsService: PostsService) { }
 
 
 
-  ngOnInit() {
-    this.postsService.getAll().subscribe((posts) => {
-      this.posts = posts.json();
-    })
-    }
+  ngOnInit() { this.getAll() }
+    
+  getAll() {
+    this.postsService.getAll()
+                              .subscribe(
+                                posts => this.posts = posts,
+                                error => this.errorMessage = <any>error
+                              );
+  }
     
   }
 

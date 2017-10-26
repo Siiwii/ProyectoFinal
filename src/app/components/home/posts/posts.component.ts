@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../../services/posts.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { Post } from '../../../model/post';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-posts',
@@ -10,26 +11,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
 
-post: any;
+post: Post;
+private sub: Subscription;
 
-  constructor( private route: ActivatedRoute, private postsService: PostsService ) { }
+constructor( private route: ActivatedRoute, private postsService: PostsService ) { }
 
-private getPost(id:number){
-  this.postsService.get(id).subscribe((post) => {
-    this.post = post.json();
-  })
-
-}
-
-
-  ngOnInit() {
-    this.route.params.subscribe((params) => {
+ngOnInit() : void{
+  this.sub = this.route.params.subscribe(
+    params => {
       let id = params['id'];
       this.getPost(id);
-    })
-  }
+    });
+}
+
+getPost(id:number) {
+  this.postsService.getPost(id).subscribe(
+    post => this.post = post,
+  );
+}
 
 }
 
-
-// Este componente solo obtiene posiciones en el array del JSON
