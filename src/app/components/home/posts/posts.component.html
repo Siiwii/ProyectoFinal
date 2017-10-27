@@ -1,11 +1,10 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="post">
     <div class="card mb-3">
         <div class="card-body">
-          <h4 class="card-title">{{ post?.title}}</h4>
+          <h4 class="card-title">{{ post?.title | capitalize}}</h4>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <img [src]="post?.url" style="width: 700px; height: 590px;"> <!-- Agregar class para modificar tamaño -->
           <p class="card-text"><small class="text-muted"><a [routerLink]="['/post', post?.id]">Last updated 3 mins ago</a></small></p>
-          <app-rating></app-rating>
         </div>
     </div>
 </div>

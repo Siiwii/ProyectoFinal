@@ -17,19 +17,23 @@ private postUrl = 'https://jsonplaceholder.typicode.com/photos/';
   getAll() : Observable<Post[]> {
   return this.http
                   .get(this.postUrl)
-                  .map((response: Response) => <Post[]> response.json())
+                  .map((response: Response) => response.json() as Post[])
                   .catch(this.handleError);
   }
 
 
   getPost(id: number) : Observable<Post> {
   return this.getAll()
-                      .map((posts: Post[]) => posts.find(post => post.id === id));
+                      .map((posts: Post[]) => {
+                        return posts.find(post => post.id === id)            
+                      });
+                    
+                        
   } 
 
   private handleError(error: Response) {
   console.error(error);
-  let message = `Código de error status ${error.status} en ${error.url}`;
+  let message = `Código de status error ${error.status} en ${error.url}`;
   return Observable.throw(message);
   }
 }

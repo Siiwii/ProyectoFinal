@@ -26,8 +26,8 @@
         <div class="col">
           <div ngbDropdown>
             <button class="btn btn-outline-dark cursor" id="dropdownConfig" ngbDropdownToggle>Ingresa</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownConfig" class="dropdown">
-              <ul class="loginpanel">
+            <div ngbDropdownMenu aria-labelledby="dropdownConfig" class="dropdown bestposition">
+              <ul class="loginpanel bestposition">
                 <li>
                   <div class="row">
                       <div class="col-md-12">
@@ -50,7 +50,10 @@
                                 Recordar mis datos
                               </label>
                             </div>
-                            <button type="submit" class="btn btn-dark cursor">Ingresar</button>
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-dark cursor">Ingresar</button>
+                              <button type="submit" class="btn btn-outline-dark cursor marginleft"><a routerLink="/register">Registrarse</a></button>
+                            </div>
                           </form>
                       </div>
 

@@ -3,6 +3,7 @@ import { PostsService } from '../../../services/posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../../model/post';
 import { Subscription } from 'rxjs/Subscription';
+import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-posts',
@@ -20,15 +21,15 @@ ngOnInit() : void{
   this.sub = this.route.params.subscribe(
     params => {
       let id = params['id'];
-      this.getPost(id);
+      this.getPost(parseInt(id));
     });
 }
 
-getPost(id:number) {
+private getPost(id:number) {
   this.postsService.getPost(id).subscribe(
-    post => this.post = post,
-  );
-}
+    post => { this.post = post;
+  });
+
+  }
 
 }
-

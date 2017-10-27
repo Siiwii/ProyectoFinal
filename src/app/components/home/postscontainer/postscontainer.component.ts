@@ -3,6 +3,7 @@ import { PostsService } from '../../../services/posts.service';
 import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 import { Post } from '../../../model/post';
 import { Subscription } from 'rxjs/Subscription';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-postscontainer',

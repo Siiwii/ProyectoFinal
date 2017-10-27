@@ -11,7 +11,7 @@ export class HeaderComponent {
   constructor(config: NgbDropdownConfig) {
     // customize default values of dropdowns used by this component tree
     config.placement = 'bottom-right';
-    config.autoClose = false;
+    config.autoClose = true;
   }
   ngOnInit() {
   }
