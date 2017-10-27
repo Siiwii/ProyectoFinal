@@ -5,10 +5,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header/header.component';
+// import { HeaderComponent } from './components/header/header/header.component';
 import { ToppostsComponent } from './components/topposts/topposts.component';
 import { ErrorComponent } from './components/error/error.component';
-import { HeadernoregComponent } from './components/header/headernoreg/headernoreg.component';
+// import { HeadernoregComponent } from './components/header/headernoreg/headernoreg.component';
 // import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
 import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
 import { PostsService } from './services/posts.service';
@@ -16,21 +16,24 @@ import { HttpModule } from '@angular/http';
 import { PostsComponent } from './components/home/posts/posts.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { SortbyratePipe } from './pipes/sortbyrate.pipe';
 import { CommentsComponent } from './components/comments/comments.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorfieldComponent } from './components/errorfield/errorfield.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
+    // HeaderComponent,
     ToppostsComponent,
     ErrorComponent,
-    HeadernoregComponent,
+    // HeadernoregComponent,
     // HomenoregComponent,
     PostscontainerComponent,
     PostsComponent,
@@ -39,6 +42,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     SortbyratePipe,
     CommentsComponent,
     RegisterComponent,
+    ErrorfieldComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { BarRatingModule } from 'ngx-bar-rating';
     AngularFontAwesomeModule,
     NgxPaginationModule,
     NgbModule.forRoot(),
-    BarRatingModule
+    BarRatingModule,
+    ReactiveFormsModule
   ],
   providers: [
     PostsService
