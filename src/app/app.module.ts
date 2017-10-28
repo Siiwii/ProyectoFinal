@@ -23,7 +23,8 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ErrorfieldComponent } from './components/errorfield/errorfield.component';
+import { UserService } from './services/users/user.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { ErrorfieldComponent } from './components/errorfield/errorfield.componen
     SortbyratePipe,
     CommentsComponent,
     RegisterComponent,
-    ErrorfieldComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { ErrorfieldComponent } from './components/errorfield/errorfield.componen
     ReactiveFormsModule
   ],
   providers: [
-    PostsService
+    PostsService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../services/users/user.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +12,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent{
 
   form: FormGroup;
+  model: any;
   
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private modalService: NgbModal,
+    private router: Router
   ) {
     this.createForm();
   }
@@ -107,7 +114,18 @@ export class RegisterComponent{
     }
   }
 
-  onRegisterSubmit() {
-    console.log('form submitted');
+  
+
+  open(content) {
+    this.modalService.open(content, { windowClass: 'dark-modal' });
   }
+
+  onRegisterSubmit() {
+    this.userService.create(this.model)
+    .subscribe(
+        data => {
+            this.router.navigate(['/login']);
+        })
+      
+    }
 }

@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PostsComponent } from './components/home/posts/posts.component';
 import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   // {path: '', component: HomenoregComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'posts', component: PostscontainerComponent},
   {path: 'post/:id', component: PostsComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: ErrorComponent}
 
 ];
