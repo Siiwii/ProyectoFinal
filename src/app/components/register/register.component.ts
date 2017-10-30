@@ -1,23 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/users/user.service';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { User } from '../../models/users';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent{
+
+
+export class RegisterComponent implements OnInit{
+
+  @Input('user') user:User;
+  @Output() userAdded = new EventEmitter<User>();
 
   form: FormGroup;
-  model: any;
+  username: string;
+  password: string;
+  name: string;
+  email: string;
   
+  ngOnInit() {}
+
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private modalService: NgbModal,
     private router: Router
   ) {
     this.createForm();
@@ -114,18 +123,8 @@ export class RegisterComponent{
     }
   }
 
-  
-
-  open(content) {
-    this.modalService.open(content, { windowClass: 'dark-modal' });
-  }
-
-  onRegisterSubmit() {
-    this.userService.create(this.model)
-    .subscribe(
-        data => {
-            this.router.navigate(['/login']);
-        })
-      
+  onRegisterSubmit(user) {
+    this.userAdded.emit({username: this.username, password: this.password, email: this.email, name: this.name})
+    this.userService.createUser(user);
     }
 }

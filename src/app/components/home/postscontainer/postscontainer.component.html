@@ -5,23 +5,23 @@
     </h4>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
       bit longer.</p>
-    <img [src]="post.url" style="width: 700px; height: 590px;">
-    <!-- Agregar class para modificar tamaño -->
-    <p class="card-text">
-      <small class="text-muted">
-        <a [routerLink]="['/post', post.id]">Last updated 3 mins ago</a>
-      </small>
-    </p>
+    <div class="col-md-6 nopadding">
+      <img [src]="post.url">
+    </div>
     <div class="row">
-      <ngb-accordion #acc="ngbAccordion">
-        <div class="col-xs-6">
-          <ngb-panel id="toggle-1" title="">
-            <ng-template ngbPanelContent>
-                <bar-rating [(rate)]="rate" [max]="10" [theme]="'horizontal'"></bar-rating>
-            </ng-template>
-          </ngb-panel>
-        </div>
-      </ngb-accordion>
+      <div class="col-md-2">
+        <bar-rating name="bar" [(rate)]="rate" [max]="10" [theme]="'pokemon'"></bar-rating>
+      </div>
+      <div class="middle">
+        <p class="ratingtext">Valoración actual: {{ rate }}</p>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed">
+      Comenta
+    </button>
+    
+    <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+      <p>Hola</p>
     </div>
   </div>
 </div>

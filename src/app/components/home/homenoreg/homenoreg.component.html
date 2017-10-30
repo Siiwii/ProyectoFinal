@@ -1,0 +1,106 @@
+<div class="background">
+    <div class="container">
+        <div class="box2 margintop">
+            <h2>Iniciar sesión</h2>
+            <div class="row justify-content-center" id="form-box">
+                <form (keyup.enter)="login()">
+                    <div class="form-group nomargin">
+                        <input type="text" name="email" placeholder="E-Mail" [(ngModel)]="user.email" id="email" />
+                    </div>
+                    <div class="form-group nomargin">
+                        <input type="text" name="pass" placeholder="Contraseña" [(ngModel)]="user.password" id="password"/>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <h4>¿No tienes una? Regístrate ahora.</h4>
+            <div class="row justify-content-center form-box">
+                <form [formGroup]="form" class="eighty">
+
+
+                    <div class="form-group nomargin">
+                        <label for="name">Nombre Completo</label>
+                        <div [ngClass]="{'has-error': (form.controls.name.errors && form.controls.name.dirty), 'has-success': !form.controls.name.errors}">
+                            <input type="text" [(ngModel)]="newUser.name" name="name" class="form-control" autocomplete="off" placeholder="*Introduce tu nombre completo" formControlName="name"
+                            />
+
+                            <ul class="help-block">
+                                <li *ngIf="form.controls.name.errors?.required && form.controls.name.dirty">Este campo es obligatorio.</li>
+                                <li *ngIf="form.controls.name.errors?.minlength && form.controls.name.dirty || form.controls.name.errors?.maxlength && form.controls.name.dirty ">Tu nombre debe tener entre 5 y 35 caracteres.</li>
+                                <li *ngIf="form.controls.name.errors?.validateName && form.controls.name.dirty">Tu nombre no puede contener caracteres especiales.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group nomargin">
+                        <label for="email">Correo electrónico</label>
+                        <div [ngClass]="{'has-error': (form.controls.email.errors && form.controls.email.dirty), 'has-success': !form.controls.email.errors}">
+                            <input type="text" [(ngModel)]="newUser.email" name="email" class="form-control" autocomplete="off" placeholder="*Introduce tu correo electrónico" formControlName="email"
+                            />
+
+                            <ul class="help-block">
+                                <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">Este campo es obligatorio.</li>
+                                <li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty || form.controls.email.errors?.maxlength && form.controls.email.dirty ) && form.controls.email.dirty">El mail debe tener entre 5 y 35 caracteres.</li>
+                                <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">Este no es un mail válido, por favor ingresa uno real.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group nomargin">
+                        <label for="username">Usuario</label>
+                        <div [ngClass]="{'has-error': (form.controls.username.errors && form.controls.username.dirty), 'has-success': !form.controls.username.errors}">
+                            <input type="text" [(ngModel)]="newUser.username" name="username" class="form-control" autocomplete="off" placeholder="*Introduce tu usuario" formControlName="username"
+                            />
+
+                            <ul class="help-block">
+                                <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">Este campo es obligatorio.</li>
+                                <li *ngIf="form.controls.username.errors?.minlength && form.controls.username.dirty || form.controls.username.errors?.maxlength && form.controls.username.dirty ">El usuario debe tener entre 3 y 15 caracteres.</li>
+                                <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">El usuario no puede tener caracteres especiales.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group nomargin">
+                        <label for="password">Password</label>
+                        <div [ngClass]="{'has-error': (form.controls.password.errors && form.controls.password.dirty), 'has-success': !form.controls.password.errors}">
+                            <input type="password" [(ngModel)]="newUser.password" name="password" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña" formControlName="password"
+                            />
+
+                            <ul class="help-block">
+                                <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">Este campo es obligatorio.</li>
+                                <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">La contraseña debe tener entre 8 y 35 caracteres.</li>
+                                <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">La contraseña debe contener al menos un caracter especial y una letra en mayúscula. Esto
+                                    es para aumentar la seguridad de la misma.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group nomargin">
+                        <label for="confirm">Confirma tu contraseña</label>
+                        <div [ngClass]="{'has-error': (form.controls.confirm.errors && form.controls.confirm.dirty) || (form.errors?.matchingPasswords && form.controls.confirm.dirty), 'has-success': !form.controls.confirm.errors && !form.errors?.matchingPasswords}">
+                            <input type="password" name="confirm" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña nuevamente"
+                                formControlName="confirm" />
+
+                            <ul class="help-block">
+                                <li *ngIf="form.controls.confirm.errors?.required && form.controls.confirm.dirty">Este campo es obligatorio.</li>
+                                <li *ngIf="form.errors?.matchingPasswords && form.controls.confirm.dirty">Las contraseñas no coinciden</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button [disabled]="!form.valid" type="submit" class="bton" (click)="onRegisterSubmit()">Regístrate</button>
+                </form>
+            </div>
+        </div>
+        <div class="ib margintop">
+            <h3>Kollox</h3>
+        </div>
+        <p class="card-text poppins">
+            Postea lo que más te gusta, sin límites.
+        </p>
+    </div>
+</div>

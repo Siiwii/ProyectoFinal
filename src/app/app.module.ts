@@ -5,13 +5,13 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-// import { HeaderComponent } from './components/header/header/header.component';
+import { HeaderComponent } from './components/header/header/header.component';
 import { ToppostsComponent } from './components/topposts/topposts.component';
 import { ErrorComponent } from './components/error/error.component';
 // import { HeadernoregComponent } from './components/header/headernoreg/headernoreg.component';
-// import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
+import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
 import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
-import { PostsService } from './services/posts.service';
+import { PostsService } from './services/posts/posts.service';
 import { HttpModule } from '@angular/http';
 import { PostsComponent } from './components/home/posts/posts.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,20 +22,23 @@ import { SortbyratePipe } from './pipes/sortbyrate.pipe';
 import { CommentsComponent } from './components/comments/comments.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BarRatingModule } from 'ngx-bar-rating';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserService } from './services/users/user.service';
 import { LoginComponent } from './components/login/login.component';
+import { PostComponent } from './tests/post/post.component';
+import { PostcontComponent } from './tests/postcont/postcont.component';
+import { AuthenticationService } from './services/authentication.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    // HeaderComponent,
+    HeaderComponent,
     ToppostsComponent,
     ErrorComponent,
     // HeadernoregComponent,
-    // HomenoregComponent,
+    HomenoregComponent,
     PostscontainerComponent,
     PostsComponent,
     FooterComponent,
@@ -44,6 +47,8 @@ import { LoginComponent } from './components/login/login.component';
     CommentsComponent,
     RegisterComponent,
     LoginComponent,
+    PostComponent,
+    PostcontComponent
   ],
   imports: [
     BrowserModule,
@@ -53,11 +58,13 @@ import { LoginComponent } from './components/login/login.component';
     NgxPaginationModule,
     NgbModule.forRoot(),
     BarRatingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     PostsService,
-    UserService
+    UserService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

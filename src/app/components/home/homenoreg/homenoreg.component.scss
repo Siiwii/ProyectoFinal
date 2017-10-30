@@ -1,3 +1,139 @@
-*{
-    margin-top: 100px;
+.background { 
+    background-color: black;
+        color: rgb(255, 255, 255);
+        position: relative;
+        min-height: 350px;
+        overflow-x:hidden
+    }
+
+h3 {
+    font-family: Kalypsa;
+    font-size: 90px;
+    color: white;
 }
+
+h2 {
+    font-family: Kalypsa;
+    font-size: 65px;
+    color: white;
+    text-align: center;
+}
+
+h4 {
+    font-family: Poppins;
+    font-size: 25px;
+    color: white;
+}
+
+.eighty {
+    width:80%;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.box2.margintop{
+    float:right;
+    margin-top: 2em
+}
+
+.nopadding{
+    padding: 0;
+}
+
+.poppins{
+    font-family: Poppins;
+    width: 30%;
+}
+
+.ib.margintop{
+    display: inline-block;
+    margin-top: 14em;
+}
+
+.marginbottom{
+    margin-bottom: 8em;
+}
+
+.form-box{
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px 2px;
+    background: rgba(200, 200, 200, 0.2);
+    border-radius: 4px;
+    max-width: 30em;
+    padding: 1rem 0;
+}
+
+#form-box{
+    max-width: 30em;
+    margin-bottom: 1rem;
+}
+
+#form-box input{
+    width: 100%;
+    padding: 10px;
+    height:40px;
+    border: 1px solid rgb(200, 200, 200);
+    background: #fafafa;
+    transition:0.5s ease-in-out;
+    border-radius: 4px;
+}
+
+#form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+#form-box input[type="text"] {
+    margin: 0.6rem;
+    text-align: center;
+}
+
+.form-box input{
+    width: 100%;
+    padding: 10px;
+    height:40px;
+    border: 1px solid rgb(200, 200, 200);
+    background: #fafafa;
+    transition:0.5s ease-in-out;
+    border-radius: 4px;
+}
+
+.form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input[type="text"] {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 4px;
+}
+
+li {
+    color: #cc0000;
+    width: 100%;
+}
+
+.bton {
+    background: #6f8594;
+    background-image: linear-gradient(to bottom, #6f8594, #bfbfbf);
+    border-radius: 4px;
+    font-family: Poppins;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .bton:hover {
+    background: #bfbfbf;
+    background-image: linear-gradient(to bottom, #bfbfbf, #6f8594);
+    text-decoration: none;
+    cursor: pointer;
+  }

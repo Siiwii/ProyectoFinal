@@ -1,9 +1,10 @@
 export class User {
-    constructor(
-        public id: string,
-        public name: string, 
-        public user: string, 
-        public mail: string,
-        private pass: string
-        ){}
+    name: string;
+    username: string;
+    email: string;
+    password: string;
+
+    constructor(values: Object = {}) {
+        Object.assign(this, values);
+      }
 }

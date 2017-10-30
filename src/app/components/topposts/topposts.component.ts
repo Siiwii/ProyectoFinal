@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SortbyratePipe } from '../../pipes/sortbyrate.pipe';
-import { PostsService } from '../../services/posts.service';
-import { Post } from '../../model/post';
+import { PostsService } from '../../services/posts/posts.service';
+import { Post } from '../../models/post';
 
 @Component({
   selector: 'app-topposts',

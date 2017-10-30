@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-6">
       <div class="cajaform">
-        <form [formGroup]="form" (submit)="onRegisterSubmit()">
+        <form [formGroup]="form">
 
 
           <div class="form-group">
@@ -79,24 +79,9 @@
             </div>
           </div>
 
-          <input [disabled]="!form.valid" type="submit" class="btn btn-primary" value="Submit" (click)="open(bienvenido)" />
+          <input [disabled]="!form.valid" type="submit" class="btn btn-primary" value="Submit" (click)="onRegisterSubmit()" />
         </form>
       </div>
     </div>
   </div>
 </div>
-
-<ng-template #bienvenido let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Bienvenido a Blog!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>AL TOKE PERRO</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-light" (click)="onRegisterSubmit()">Comenzar</button>
-  </div>
-</ng-template>

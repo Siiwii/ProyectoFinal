@@ -1,28 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { User } from '../../models/users';
 
 @Injectable()
 export class UserService {
-  constructor(private http: Http) { }
+users: User[];
 
-  getAll() {
-    return this.http.get('/users').map((response: Response) => response.json());
+  createUser( user: User ) {
+    this.users.unshift(user);
+    let users;
+    if (localStorage.getItem('users') == null) {
+      users = [];
+      users.unshift(user);
+      localStorage.setItem('users', JSON.stringify(users));
+    } else {
+      users = JSON.parse(localStorage.getItem('users'));
+      users.unshift(user);
+    }
   }
 
-  getById(id: string) {
-    return this.http.get('/users/' + id).map((response: Response) => response.json());
+  getUsers() {
+    if (localStorage.getItem('users') == null) {
+      this.users = [];
+    } else {
+      this.users = JSON.parse(localStorage.getItem('users'))
+    }
+    return this.users;
   }
 
-  create(user: User) {
-    return this.http.post('/users/register', user);
-  }
-
-  update(user: User) {
-    return this.http.put('/users/' + user.id, user);
-  }
-
-  delete(id: string) {
-    return this.http.delete('/users/' + id);
+  deleteUser(user: User) {
+    for ( let i = 0; i < this.users.length; i++) {
+      if ( user == this.users[i] ){
+        this.users.splice(1,1);
+        localStorage.setItem('users', JSON.stringify(this.users))
+      }
+    }
   }
 }

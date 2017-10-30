@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../../../services/posts.service';
+import { PostsService } from '../../../services/posts/posts.service';
 import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 import { Post } from '../../../models/post';
 import { Subscription } from 'rxjs/Subscription';
-import { NgModel } from '@angular/forms';
+import { NgModel, FormControl, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-postscontainer',
@@ -11,13 +13,13 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./postscontainer.component.scss'],
 })
 export class PostscontainerComponent implements OnInit {
-
+  bar = new FormControl(null, Validators.required);
   posts: Post[];
   errorMessage: string;
+  public isCollapsed = false;
+  postss: any[];
 
   constructor(private postsService: PostsService) { }
-
-
 
   ngOnInit() { this.getAll() }
 

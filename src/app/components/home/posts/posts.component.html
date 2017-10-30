@@ -1,10 +1,46 @@
 <div class="contenedor" *ngIf="post">
     <div class="card mb-3">
         <div class="card-body">
-          <h4 class="card-title">{{ post?.title | capitalize}}</h4>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <img [src]="post?.url" style="width: 700px; height: 590px;"> <!-- Agregar class para modificar tamaño -->
-          <p class="card-text"><small class="text-muted"><a [routerLink]="['/post', post?.id]">Last updated 3 mins ago</a></small></p>
+            <h4 class="card-title">
+                <a [routerLink]="['/post', post.id]">{{ post.title | capitalize}}</a>
+            </h4>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+                little bit longer.</p>
+            <div class="col-md-6 nopadding">
+                <img [src]="post.url">
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <bar-rating name="bar" [(rate)]="rate" [max]="10" [theme]="'pokemon'"></bar-rating>
+                </div>
+                <div class="middle">
+                    <p class="ratingtext">Valoración actual: {{ rate }}</p>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed">
+                Comenta
+            </button>
+
+            <!-- <div *showAuthed="true" [ngbCollapse]="!isCollapsed">
+                    <form class="card comment-form" (ngSubmit)="addComment()">
+                      <fieldset [disabled]="isSubmitting">
+                        <div class="card-block">
+                          <textarea class="form-control"
+                            placeholder="Write a comment..."
+                            rows="3"
+                            [formControl]="commentControl"
+                          ></textarea>
+                        </div>
+                        <div class="card-footer">
+                          <img [src]="currentUser.image" class="comment-author-img" />
+                          <button class="btn btn-sm btn-primary" type="submit">
+                           Escribe tu comentario
+                          </button>
+                        </div>
+                      </fieldset>
+                    </form>
+            </div> -->
+
         </div>
     </div>
 </div>

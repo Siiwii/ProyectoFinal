@@ -1,5 +1,13 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import '~ngx-bar-rating/themes/br-horizontal-theme';
+@import '~ngx-bar-rating/themes/br-pokemon-theme';
+@font-face {
+    font-family: Kalypsa;
+    src: url(./assets/fonts/Kalypsa.ttf)
+}
+@font-face {
+    font-family: Poppins;
+    src: url(./assets/fonts/Poppins.ttf)
+}
 
 body,html {
     height: 100%;
