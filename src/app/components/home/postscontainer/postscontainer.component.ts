@@ -12,12 +12,13 @@ import { NgModel, FormControl, Validators } from '@angular/forms';
   templateUrl: './postscontainer.component.html',
   styleUrls: ['./postscontainer.component.scss'],
 })
+
+
 export class PostscontainerComponent implements OnInit {
   bar = new FormControl(null, Validators.required);
   posts: Post[];
   errorMessage: string;
   public isCollapsed = false;
-  postss: any[];
 
   constructor(private postsService: PostsService) { }
 

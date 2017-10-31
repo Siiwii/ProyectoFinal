@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from '../../../services/posts/posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../../models/post';
@@ -15,7 +15,8 @@ import { User } from '../../../models/users';
 })
 export class PostsComponent implements OnInit {
 
-post: Post;
+postt:Post;
+
 private sub: Subscription;
 isSubmitting = false;
 isDeleting = false;
@@ -27,6 +28,8 @@ commentFormErrors = {};
 
 constructor( private route: ActivatedRoute, private postsService: PostsService ) { }
 
+
+
 ngOnInit() : void{
   this.sub = this.route.params.subscribe(
     params => {
@@ -37,11 +40,10 @@ ngOnInit() : void{
 
 private getPost(id:number) {
   this.postsService.getPost(id).subscribe(
-    post => { this.post = post;
+    post => { this.postt = post;
   });
-
-  }
-
+}
+}
   // addComment() {
   //   this.isSubmitting = true;
   //   this.commentFormErrors = {};
@@ -71,5 +73,3 @@ private getPost(id:number) {
   //     );
   // }
 
-
-}

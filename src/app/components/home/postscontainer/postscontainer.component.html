@@ -1,28 +1,5 @@
-<div class="card mb-3" *ngFor="let post of posts | paginate: { itemsPerPage: 3, currentPage: p }">
-  <div class="card-body">
-    <h4 class="card-title">
-      <a [routerLink]="['/post', post.id]">{{ post.title | capitalize}}</a>
-    </h4>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-      bit longer.</p>
-    <div class="col-md-6 nopadding">
-      <img [src]="post.url">
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <bar-rating name="bar" [(rate)]="rate" [max]="10" [theme]="'pokemon'"></bar-rating>
-      </div>
-      <div class="middle">
-        <p class="ratingtext">Valoración actual: {{ rate }}</p>
-      </div>
-    </div>
-    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed">
-      Comenta
-    </button>
-    
-    <div id="collapseExample" [ngbCollapse]="!isCollapsed">
-      <p>Hola</p>
-    </div>
-  </div>
-</div>
-<div class="contenedor"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
+<div class="contenedor">
+  <app-posts *ngFor="let post of posts | paginate: { itemsPerPage: 3, currentPage: p }" [post]="post"></app-posts>
+</div> 
+
+<div class="contenedor2"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>

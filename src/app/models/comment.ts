@@ -1,6 +1,7 @@
 export class Comment {
-    id: number;
-    body: string;
-    createdAt: string;
-    author: string;
+  constructor(
+    id: number,
+    body: string,
+    createdAt: string,
+    author: string){}
   }

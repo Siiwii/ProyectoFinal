@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit{
   }
 
   validateName(controls) {
-    const regExp = new RegExp (/^[a-zA-Z]+$/);
+    const regExp = new RegExp (/^[a-zA-Z_]+( [a-zA-Z_]+)*$/);
     if (regExp.test(controls.value)) {
       return null;
     } else {
@@ -123,8 +123,7 @@ export class RegisterComponent implements OnInit{
     }
   }
 
-  onRegisterSubmit(user) {
-    this.userAdded.emit({username: this.username, password: this.password, email: this.email, name: this.name})
-    this.userService.createUser(user);
+  onRegisterSubmit() {
+    this.userService.savePerson(this.form.value)
     }
 }

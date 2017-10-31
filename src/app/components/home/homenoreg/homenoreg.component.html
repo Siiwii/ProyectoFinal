@@ -5,10 +5,10 @@
             <div class="row justify-content-center" id="form-box">
                 <form (keyup.enter)="login()">
                     <div class="form-group nomargin">
-                        <input type="text" name="email" placeholder="E-Mail" [(ngModel)]="user.email" id="email" />
+                        <input type="text" name="email" placeholder="E-Mail" id="email" />
                     </div>
                     <div class="form-group nomargin">
-                        <input type="text" name="pass" placeholder="Contraseña" [(ngModel)]="user.password" id="password"/>
+                        <input type="text" name="pass" placeholder="Contraseña" id="password"/>
                     </div>
                 </form>
             </div>
@@ -21,7 +21,7 @@
                     <div class="form-group nomargin">
                         <label for="name">Nombre Completo</label>
                         <div [ngClass]="{'has-error': (form.controls.name.errors && form.controls.name.dirty), 'has-success': !form.controls.name.errors}">
-                            <input type="text" [(ngModel)]="newUser.name" name="name" class="form-control" autocomplete="off" placeholder="*Introduce tu nombre completo" formControlName="name"
+                            <input type="text" name="name" [(ngModel)]="person.name" class="form-control" autocomplete="off" placeholder="*Introduce tu nombre completo" formControlName="name"
                             />
 
                             <ul class="help-block">
@@ -36,7 +36,7 @@
                     <div class="form-group nomargin">
                         <label for="email">Correo electrónico</label>
                         <div [ngClass]="{'has-error': (form.controls.email.errors && form.controls.email.dirty), 'has-success': !form.controls.email.errors}">
-                            <input type="text" [(ngModel)]="newUser.email" name="email" class="form-control" autocomplete="off" placeholder="*Introduce tu correo electrónico" formControlName="email"
+                            <input type="text" name="email" [(ngModel)]="person.email" class="form-control" autocomplete="off" placeholder="*Introduce tu correo electrónico" formControlName="email"
                             />
 
                             <ul class="help-block">
@@ -51,7 +51,7 @@
                     <div class="form-group nomargin">
                         <label for="username">Usuario</label>
                         <div [ngClass]="{'has-error': (form.controls.username.errors && form.controls.username.dirty), 'has-success': !form.controls.username.errors}">
-                            <input type="text" [(ngModel)]="newUser.username" name="username" class="form-control" autocomplete="off" placeholder="*Introduce tu usuario" formControlName="username"
+                            <input type="text" name="username" [(ngModel)]="person.username" class="form-control" autocomplete="off" placeholder="*Introduce tu usuario" formControlName="username"
                             />
 
                             <ul class="help-block">
@@ -66,7 +66,7 @@
                     <div class="form-group nomargin">
                         <label for="password">Password</label>
                         <div [ngClass]="{'has-error': (form.controls.password.errors && form.controls.password.dirty), 'has-success': !form.controls.password.errors}">
-                            <input type="password" [(ngModel)]="newUser.password" name="password" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña" formControlName="password"
+                            <input type="password" name="password" [(ngModel)]="person.password" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña" formControlName="password"
                             />
 
                             <ul class="help-block">

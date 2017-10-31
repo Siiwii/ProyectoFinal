@@ -100,3 +100,45 @@ Leer directivas y reactive forms: angular.io/guide
 
 Falta crear auth servce, guard, users component y demás.
 http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial#projectstructure
+
+
+
+Register y login
+
+onsubmit() {
+    this.personService.savePerson(this.form.value)
+}
+
+En el servicio ->
+import {Injectable} from '@angular/core';
+
+@Injectable()
+export class PersonService {
+    person: any;
+    constructor() { }
+
+    getPerson(): Observable<any> {
+        return Observable.of(this.person);
+    }
+
+    savePerson(person) {
+        this.person = person;
+    }
+}
+
+Personlistcomponent.ts ->
+
+person: any;
+
+constructor(private personService: PersonService) {}
+
+ngOnInit() {
+    this.personservice.getPerson().subscribe(data => {
+        this.person = data;
+    })
+}
+
+Personlistcomponent.html ->
+<ul *ngIf="person">
+<li> {{person.nombre}} </li>
+</ul>

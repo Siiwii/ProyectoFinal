@@ -2,8 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
 import { Router } from '@angular/router';
-// import { User } from '../../../models/users';
-import { AuthenticationService, User } from '../../../services/authentication.service';
+import { User } from '../../../models/users';
 
 @Component({
   selector: 'app-homenoreg',
@@ -11,21 +10,8 @@ import { AuthenticationService, User } from '../../../services/authentication.se
   styleUrls: ['./homenoreg.component.scss']
 })
 export class HomenoregComponent implements OnInit {
-
-  // @Input('user') user:User;
-  // newUser: User = new User();
-
-  public user = new User('','');
-  public errorMsg = '';
-
-  // @Output() usuarioAgregado = new EventEmitter<User>();
     form: FormGroup;
-    name: string;
-    username: string;
-    email: string;
-    password: string;
-    id:string;
-    image:string;
+    person:User = new User();
     
     ngOnInit() {}
   
@@ -33,7 +19,6 @@ export class HomenoregComponent implements OnInit {
       private formBuilder: FormBuilder,
       private userService: UserService,
       private router: Router,
-      private service: AuthenticationService
     ) {
       this.createForm();
     }
@@ -128,18 +113,9 @@ export class HomenoregComponent implements OnInit {
         }
       }
     }
-  
-    // onRegisterSubmit(user:User) {
-    // let user1 = this.usuarioAgregado.emit({name: this.name, username: this.username, email: this.email, password:this.password, id: this.id, image: this.image});
-    //   console.log(user);
-    //   console.log(user1);
-    //   console.log(this.usuarioAgregado);
-    //   // this.userService.createUser(user);
-    //   }
 
-      login() {
-        if(!this.service.login(this.user)){
-            this.errorMsg = 'Failed to login';
-        }
-    }
+    onRegisterSubmit() {
+      this.userService.savePerson(this.form.value);
+      console.log(this.person);
+  }
   }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeadernoregComponent } from './headernoreg.component';
+import { PostdetailComponent } from './postdetail.component';
 
-describe('HeadernoregComponent', () => {
-  let component: HeadernoregComponent;
-  let fixture: ComponentFixture<HeadernoregComponent>;
+describe('PostdetailComponent', () => {
+  let component: PostdetailComponent;
+  let fixture: ComponentFixture<PostdetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeadernoregComponent ]
+      declarations: [ PostdetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeadernoregComponent);
+    fixture = TestBed.createComponent(PostdetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

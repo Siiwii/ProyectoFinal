@@ -8,7 +8,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header/header.component';
 import { ToppostsComponent } from './components/topposts/topposts.component';
 import { ErrorComponent } from './components/error/error.component';
-// import { HeadernoregComponent } from './components/header/headernoreg/headernoreg.component';
 import { HomenoregComponent } from './components/home/homenoreg/homenoreg.component';
 import { PostscontainerComponent } from './components/home/postscontainer/postscontainer.component';
 import { PostsService } from './services/posts/posts.service';
@@ -28,6 +27,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PostComponent } from './tests/post/post.component';
 import { PostcontComponent } from './tests/postcont/postcont.component';
 import { AuthenticationService } from './services/authentication.service';
+import { PostdetailComponent } from './components/home/postdetail/postdetail.component';
 
 
 @NgModule({
@@ -37,7 +37,6 @@ import { AuthenticationService } from './services/authentication.service';
     HeaderComponent,
     ToppostsComponent,
     ErrorComponent,
-    // HeadernoregComponent,
     HomenoregComponent,
     PostscontainerComponent,
     PostsComponent,
@@ -48,7 +47,8 @@ import { AuthenticationService } from './services/authentication.service';
     RegisterComponent,
     LoginComponent,
     PostComponent,
-    PostcontComponent
+    PostcontComponent,
+    PostdetailComponent
   ],
   imports: [
     BrowserModule,

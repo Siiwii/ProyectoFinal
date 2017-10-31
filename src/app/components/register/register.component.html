@@ -11,7 +11,8 @@
           <div class="form-group">
             <label for="name">Nombre Completo</label>
             <div [ngClass]="{'has-error': (form.controls.name.errors && form.controls.name.dirty), 'has-success': !form.controls.name.errors}">
-              <input type="text" name="name" class="form-control" autocomplete="off" placeholder="*Introduce tu nombre completo" formControlName="name" />
+              <input type="text" name="name" class="form-control" autocomplete="off" placeholder="*Introduce tu nombre completo" formControlName="name"
+              />
 
               <ul class="help-block">
                 <li *ngIf="form.controls.name.errors?.required && form.controls.name.dirty">Este campo es obligatorio.</li>
@@ -25,7 +26,8 @@
           <div class="form-group">
             <label for="email">Correo electrónico</label>
             <div [ngClass]="{'has-error': (form.controls.email.errors && form.controls.email.dirty), 'has-success': !form.controls.email.errors}">
-              <input type="text" name="email" class="form-control" autocomplete="off" placeholder="*Introduce tu correo electrónico" formControlName="email" />
+              <input type="text" name="email" class="form-control" autocomplete="off" placeholder="*Introduce tu correo electrónico" formControlName="email"
+              />
 
               <ul class="help-block">
                 <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">Este campo es obligatorio.</li>
@@ -60,7 +62,8 @@
               <ul class="help-block">
                 <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">Este campo es obligatorio.</li>
                 <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">La contraseña debe tener entre 8 y 35 caracteres.</li>
-                <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">La contraseña debe contener al menos un caracter especial y una letra en mayúscula. Esto es para aumentar la seguridad de la misma.</li>
+                <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">La contraseña debe contener al menos un caracter especial y una letra en mayúscula. Esto es para aumentar
+                  la seguridad de la misma.</li>
               </ul>
             </div>
           </div>
@@ -69,8 +72,8 @@
           <div class="form-group">
             <label for="confirm">Confirma tu contraseña</label>
             <div [ngClass]="{'has-error': (form.controls.confirm.errors && form.controls.confirm.dirty) || (form.errors?.matchingPasswords && form.controls.confirm.dirty), 'has-success': !form.controls.confirm.errors && !form.errors?.matchingPasswords}">
-              <input type="password" name="confirm" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña nuevamente" formControlName="confirm"
-              />
+              <input type="password" name="confirm" class="form-control" autocomplete="off" placeholder="*Introduce tu contraseña nuevamente"
+                formControlName="confirm" />
 
               <ul class="help-block">
                 <li *ngIf="form.controls.confirm.errors?.required && form.controls.confirm.dirty">Este campo es obligatorio.</li>
